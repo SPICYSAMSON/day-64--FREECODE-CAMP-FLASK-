@@ -14,26 +14,38 @@
     </style>
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="{{ url_for('static', filename='corporate.jpg') }}" alt="Corporate Image">
     <div class="container">
-        <h1 class="text-center mt-4 mb-4">{{company_name}} Careers</h1>
-        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='corporate.jpg') }}" alt="Corporate Image">
+        <h1 class="text-center mt-4 mb-4">{{company_name}} Careers
+        </h1>
+        
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-6">
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa. Faucibus turpis in eu mi bibendum neque. Et pharetra pharetra massa massa ultricies mi quis. Congue mauris rhoncus aenean vel elit scelerisque mauris. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Ipsum suspendisse ultrices gravida dictum. Sit amet volutpat consequat mauris nunc. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Auctor urna nunc id cursus metus aliquam eleifend mi in. Turpis egestas integer eget aliquet nibh praesent tristique magna. Ut lectus arcu bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet consectetur. Nulla aliquet enim tortor at auctor urna nunc id cursus.</p>
+            </div>
 
-        <h2 class="text-center">About Tres</h2>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa. Faucibus turpis in eu mi bibendum neque. Et pharetra pharetra massa massa ultricies mi quis. Congue mauris rhoncus aenean vel elit scelerisque mauris. Faucibus nisl tincidunt eget nullam non nisi. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. In fermentum et sollicitudin ac orci. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Ipsum suspendisse ultrices gravida dictum. Sit amet volutpat consequat mauris nunc. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Auctor urna nunc id cursus metus aliquam eleifend mi in. Turpis egestas integer eget aliquet nibh praesent tristique magna. Ut lectus arcu bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet consectetur. Nulla aliquet enim tortor at auctor urna nunc id cursus.</p>
+            <div class="col-6">
+                <img src="{{url_for('static',filename='corpopic.jpg')}}" style="height:320px;">
+            </div>
 
-        <h2 class="text-center">Job Openings</h2>
+        </div>
 
-        <p>
+        <h2 class="text-center">Open Positions</h2>
+
+        <div>
             {% for job in jobs%}
                 {% include 'jobitem.html' %}
             {% endfor %}
-        </p>
+        </div>
 
         <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2022, Tres</p>
+            <button class="btn btn-primary btn-lg">Contact Us</button>
+            
+            <p class="mt-4">Copyright 2022, Tres</p>
         </div>
 
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
