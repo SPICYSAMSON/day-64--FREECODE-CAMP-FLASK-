@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>  
+        #banner{
+            height: 360px;
+            width: 100%;
+            object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">{{company_name}} Careers</h1>
+        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='corporate.jpg') }}" alt="Corporate Image">
+
+        <h2 class="text-center">About Tres</h2>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa. Faucibus turpis in eu mi bibendum neque. Et pharetra pharetra massa massa ultricies mi quis. Congue mauris rhoncus aenean vel elit scelerisque mauris. Faucibus nisl tincidunt eget nullam non nisi. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. In fermentum et sollicitudin ac orci. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Ipsum suspendisse ultrices gravida dictum. Sit amet volutpat consequat mauris nunc. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Auctor urna nunc id cursus metus aliquam eleifend mi in. Turpis egestas integer eget aliquet nibh praesent tristique magna. Ut lectus arcu bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet consectetur. Nulla aliquet enim tortor at auctor urna nunc id cursus.</p>
+
+        <h2 class="text-center">Open Positions</h2>
+
+        <p>
+            {% for job in jobs%}
+                {% include 'jobitem.html' %}
+            {% endfor %}
+        </p>
+
+        <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2022, Tres</p>
+        </div>
+
+    </div>
+</body>
+</html>
