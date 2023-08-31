@@ -21,15 +21,17 @@
         </h1>
         
         <div class="row" style="margin-bottom:30px;">
-            <div class="col-6">
+            <div class="col-md-6">
                 <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa. Faucibus turpis in eu mi bibendum neque. Et pharetra pharetra massa massa ultricies mi quis. Congue mauris rhoncus aenean vel elit scelerisque mauris. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Ipsum suspendisse ultrices gravida dictum. Sit amet volutpat consequat mauris nunc. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Auctor urna nunc id cursus metus aliquam eleifend mi in. Turpis egestas integer eget aliquet nibh praesent tristique magna. Ut lectus arcu bibendum at varius vel pharetra vel. Lorem ipsum dolor sit amet consectetur. Nulla aliquet enim tortor at auctor urna nunc id cursus.</p>
             </div>
 
-            <div class="col-6">
-                <img src="{{url_for('static',filename='corpopic.jpg')}}" style="height:320px;">
+            <div class="d-none d-md-block col-md-6">
+                <img src="{{ url_for('static',filename='corpopic.jpg') }}" style="height:320px;">
             </div>
 
         </div>
+
+    
 
         <h2 class="text-center">Open Positions</h2>
 
@@ -39,8 +41,9 @@
             {% endfor %}
         </div>
 
+
         <div class="text-center">
-            <button class="btn btn-primary btn-lg">Contact Us</button>
+            <a href="mailto:iamzedthird@gmail.com ?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20question%3A%20%3Center%20question%20here%3E%0D%0A%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
             
             <p class="mt-4">Copyright 2022, Tres</p>
         </div>
