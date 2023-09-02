@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from sqlalchemy import create_engine, text
 
 # Replace with your correct database connection string
@@ -18,3 +19,7 @@ try:
 except Exception as e:
     # Handle any exceptions that may occur during the database interaction
     print("An error occurred:", e)
+
+
+
+
