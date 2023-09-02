@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from sqlalchemy import create_engine, text
 
 # Replace with your correct database connection string
