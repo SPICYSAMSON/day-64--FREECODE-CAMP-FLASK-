@@ -4,13 +4,13 @@ from dotenv import load_dotenv, dotenv_values
 import os
 
 load_dotenv()
-db_connection_string = os.getenv("DB_CONNECTION_STRING")
+#db_connection_string = os.getenv("DB_CONNECTION_STRING")
 
 # Replace with your correct database connection string
 
 
 # Create a database engine
-engine = create_engine(db_connection_string)
+engine = create_engine("mysql+pymysql://root:HAKDUGERZ69@127.0.0.1:3306/trescareers?charset=utf8mb4")
 
 
 def load_jobs_from_db():
