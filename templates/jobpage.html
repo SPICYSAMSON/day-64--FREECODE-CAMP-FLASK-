@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{specific_job.title}} - Tres Careers</title>
+        {% include "bootstrap.html" %}
+    </head>
+
+    <body>
+    {% include 'nav.html' %}
+    <h3>Title: {{specific_job.title}}</h3>
+    <h3>Location: {{specific_job.location}}</h3>
+    <h3>Salary: {{specific_job.salary}}</h3>
+    <h3>Responsibilities: {{specific_job.responsibilities}}</h3>
+    <h3>Requirements: {{specific_job.requirements}}</h3>
+    {% include "footer.html" %}
+    </body>
+
+
+</html>
