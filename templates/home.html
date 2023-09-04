@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tres Careers</title>
     {% include "bootstrap.html" %}
-    <style>  
-        #banner{
-            height: 360px;
-            width: 100%;
-            object-fit: cover; 
-        }
-    </style>
+
 </head>
 <body>
     {% include 'nav.html' %}
-    <img class="img-fluid" id="banner" src="{{ url_for('static', filename='corporate.jpg') }}" alt="Corporate Image">
+    {% include "banner.html" %}
     <div class="container">
         <h1 class="text-center mt-4 mb-4">{{company_name}} Careers
         </h1>
