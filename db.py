@@ -1,8 +1,13 @@
 from sqlalchemy import create_engine, text
 from pprint import pprint
+from dotenv import load_dotenv, dotenv_values
+import os
+
+load_dotenv()
+db_connection_string = os.getenv("DB_CONNECTION_STRING")
 
 # Replace with your correct database connection string
-db_connection_string = "mysql+pymysql://root:HAKDUGERZ69@127.0.0.1:3306/trescareers?charset=utf8mb4"
+
 
 # Create a database engine
 engine = create_engine(db_connection_string)
