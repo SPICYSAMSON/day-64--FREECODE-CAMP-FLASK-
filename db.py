@@ -5,7 +5,6 @@ import os
 
 load_dotenv()
 db_connection_string = os.getenv("DB_CONNECTION_STRING")
-print(db_connection_string)
 
 # Create a database engine
 engine = create_engine(db_connection_string)
@@ -39,6 +38,19 @@ def load_jobs_from_db():
     except Exception as e:
         # Handle any exceptions that may occur during the database interaction
         print("An error occurred:", e)
+        
+
+def load_specificjob_from_db(id):
+    with engine.connect() as conn:
+        val = id
+        result = conn.execute(
+            text(f"SELECT * FROM jobs WHERE id= {val}"),
+        )
+        rows = result.all()
+        if len(rows) == 0:
+            return None
+        else:
+            return rows[0]._asdict()
 
 
 
