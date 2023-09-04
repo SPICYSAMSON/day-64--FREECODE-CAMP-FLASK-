@@ -4,10 +4,8 @@ from dotenv import load_dotenv, dotenv_values
 import os
 
 load_dotenv()
-db_connection_string = os.getenv("DB_CONNECTION_STRING")
-
-# Replace with your correct database connection string
-
+db_connection_string: str = os.getenv("DB_CONNECTION_STRING")
+print(db_connection_string)
 
 # Create a database engine
 engine = create_engine(db_connection_string)
