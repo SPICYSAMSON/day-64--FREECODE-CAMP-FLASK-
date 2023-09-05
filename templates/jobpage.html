@@ -30,7 +30,47 @@
             </ol>
 
             <h4>Salary: {{specific_job.salary}} {{specific_job.currency}}</h4>
+            
+
+            <h4>Application Form</h4>
+                <form action="/job/{{specific_job['id']}}/apply" method="post">
+                    <div class="mb-2">
+                        <label>Full Name</label><br>
+                        <input type="text" name="full_name" placeholder="Tres Samson">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Email</label><br>
+                        <input type="text" name="email" placeholder="spicysamson@gmail.com">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Linkedin URL</label><br>
+                        <input type="text" name="linkedin_email">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Education</label><br>
+                        <textarea name="education"></textarea>
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Work Experience</label><br>
+                        <textarea name="work_exp"></textarea>
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Resume URL</label><br>
+                        <input type="text" name="resume_url">
+                    </div>
+
+                    <input type="submit">
+
+                </form>
+
+
             {% include "footer.html" %}
+
     </div>
     </body>
 

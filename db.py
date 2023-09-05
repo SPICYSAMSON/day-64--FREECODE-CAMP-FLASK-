@@ -42,15 +42,43 @@ def load_jobs_from_db():
 
 def load_specificjob_from_db(id):
     with engine.connect() as conn:
-        val = id
-        result = conn.execute(
-            text(f"SELECT * FROM jobs WHERE id= {val}"),
-        )
-        rows = result.all()
-        if len(rows) == 0:
+        query = text("SELECT * FROM jobs WHERE id = :val")
+        result = conn.execute(query, 
+                              {'val': id})
+        row = result.first()
+        if row is None:
             return None
         else:
-            return rows[0]._asdict()
+            return row._asdict()
+
+        
+
+def add_application_to_db(job_id, application):
+    try:
+        with engine.connect() as conn:
+            query = text(
+                "INSERT INTO applications (job_id, full_name, email, linked_in_url, education, work_experience, resume_url)"
+                "VALUES (:job_id, :full_name, :email, :linked_in_url, :education, :work_experience, :resume_url)"
+            )
+            conn.execute(
+                query,
+                {
+                    'job_id': job_id,
+                    'full_name': application['full_name'],
+                    'email': application['email'],
+                    'linked_in_url': application['linkedin_email'],
+                    'education': application['education'],
+                    'work_experience': application['work_exp'],
+                    'resume_url': application['resume_url']
+                }
+            )
+            # Commit the transaction to save changes to the database
+            conn.commit()
+    except Exception as e:
+        # Log any exceptions that occur
+        print(f"Error inserting data: {str(e)}")
+
+
 
 
 

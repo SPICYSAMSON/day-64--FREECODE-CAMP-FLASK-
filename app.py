@@ -1,5 +1,5 @@
-from flask import Flask, render_template, jsonify
-from db import load_jobs_from_db, load_specificjob_from_db
+from flask import Flask, render_template, jsonify, request
+from db import load_jobs_from_db, load_specificjob_from_db, add_application_to_db
 
 
 app = Flask(__name__)
@@ -24,6 +24,17 @@ def show_job(id):
     
     return render_template('jobpage.html',
                            specific_job=specific_job)
+    
+@app.route('/job/<id>/apply', methods = ['post'])
+def apply_to_job(id):
+    data = request.form
+    job = load_specificjob_from_db(id)   #$ahhhh okay db call to get the current job (kung sain siya nag apply)
+    #store in db
+    #send an email
+    #display an acknowledgement
+    add_application_to_db(id,data)
+    return render_template("application_submitted.html", 
+                           application_data = data, specific_job = job)
 
 if __name__== '__main__':
     app.run(host='0.0.0.0', debug=True)
